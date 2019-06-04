@@ -1,9 +1,10 @@
 <template>
-	<div>
+	<div class="wrapper">
 		<button @click="setting">setting</button>
 		<cy-popup v-model="show">
 			<div style="width: 375px;height: 300px;background-color: red;"></div>
 		</cy-popup>
+		<!--<cy-toast mode="fail" content="提交失败提交失败提交失败提交失败"></cy-toast>-->
 	</div>
 </template>
 
@@ -22,11 +23,22 @@ export default {
 	},
 	methods: {
 		setting: function(){
-			this.show = !this.show;
+			//this.show = !this.show;
+			/*this.$showToast({
+				mode: 'success',
+				content: '提交成功'
+			});*/
+			this.$showToast(' 很舒服士大夫撒放时间啊发送到 ');
 		}
 	}
 }
 </script>
 
 <style>
+body {
+	font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
+}
+.wrapper::before {
+	content: "\F0C1";
+}
 </style>
