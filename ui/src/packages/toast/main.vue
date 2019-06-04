@@ -53,14 +53,13 @@ export default {
 	mixins: [Bem],
 	data() {
 		return {
-			timer: null,
 			mode: '',
 			content: '',
 			duration: 2000
 		}
 	},
 	created() {
-		this.timer = setTimeout(()=>{
+		setTimeout(()=>{
 			document.body.removeChild(this.$el);
 			this.$destroy('Toast');
 		}, this.duration);
