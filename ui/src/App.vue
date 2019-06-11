@@ -24,11 +24,10 @@ export default {
 	methods: {
 		setting: function(){
 			//this.show = !this.show;
-			/*this.$showToast({
-				mode: 'success',
+			this.$showToast({
+				mode: 'fail',
 				content: '提交成功'
-			});*/
-			this.$showToast(' 很舒服士大夫撒放时间啊发送到 ');
+			});
 		}
 	}
 }
