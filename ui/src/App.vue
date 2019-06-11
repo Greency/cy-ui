@@ -24,10 +24,15 @@ export default {
 	methods: {
 		setting: function(){
 			//this.show = !this.show;
-			this.$showToast({
+			/*this.$showToast({
 				mode: 'fail',
 				content: '提交成功'
-			});
+			});*/
+			this.$showLoading('进行中');
+
+			setTimeout(()=>{
+				this.$hideLoading();
+			}, 2 * 1000);
 		}
 	}
 }
