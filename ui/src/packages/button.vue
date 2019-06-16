@@ -1,6 +1,7 @@
 <template>
 	<button
-		:class="['cy-button', bem('button', type), bem('button', size), bem('button', shape)]"
+		:class="['cy-button', bem('button', type), bem('button', size), bem('button', shape), disabled ? bem('button', 'disabled') : '']"
+		:disabled="disabled"
 		@click="handleClick"
 	>
 		<svg
@@ -41,6 +42,7 @@ export default {
 	name: 'Button',
 	mixins: [Bem],
 	props: {
+		disabled: Boolean,
 		loading: Boolean,
 		shape: String,
 		type: {
@@ -91,6 +93,10 @@ export default {
 		opacity: 0.15;
 	}
 
+	&--disabled {
+		opacity: 0.5;
+	}
+
 	// 下面是颜色
 	&--default {
 		color: black;
@@ -129,7 +135,6 @@ export default {
 		line-height: 48px;
 	}
 
-    //下面是大小
 	&--large {
 		width: 100%;
 		height: 50px;
