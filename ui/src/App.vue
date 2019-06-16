@@ -1,6 +1,6 @@
 <template>
 	<div class="wrapper">
-		<button @click="setting">setting</button>
+		<cy-button  type="warning" shape="" @click="setting">弹一弹</cy-button>
 		<cy-popup v-model="show">
 			<div style="width: 375px;height: 300px;background-color: red;"></div>
 		</cy-popup>
@@ -10,11 +10,13 @@
 
 <script>
 import Popup from './packages/popup';
+import Button from './packages/button';
 
 export default {
 	name: 'app',
 	components: {
-		'cy-popup': Popup
+		'cy-popup': Popup,
+		'cy-button': Button
 	},
 	data() {
 		return {
@@ -22,17 +24,8 @@ export default {
 		}
 	},
 	methods: {
-		setting: function(){
-			//this.show = !this.show;
-			/*this.$showToast({
-				mode: 'fail',
-				content: '提交成功'
-			});*/
-			this.$showLoading('进行中');
-
-			setTimeout(()=>{
-				this.$hideLoading();
-			}, 2 * 1000);
+		setting: function(e){
+			console.log('e: ', e);
 		}
 	}
 }
