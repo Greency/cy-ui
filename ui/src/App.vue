@@ -1,6 +1,6 @@
 <template>
 	<div class="wrapper">
-		<cy-button  type="warning" shape="" @click="setting">弹一弹</cy-button>
+		<cy-button  type="warning" shape="" size="large" @click="setting">弹一弹</cy-button>
 		<cy-popup v-model="show">
 			<div style="width: 375px;height: 300px;background-color: red;"></div>
 		</cy-popup>

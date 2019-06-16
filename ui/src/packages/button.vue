@@ -4,7 +4,7 @@
 		@click="handleClick"
 	>
 		<svg
-            v-if="loading"
+			v-if="loading"
 			class="small-loading-icon"
 			version="1"
 			x="0px"
@@ -127,6 +127,13 @@ export default {
 		padding-left: 15px;
 		padding-right: 15px;
 		line-height: 48px;
+	}
+
+    //下面是大小
+	&--large {
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
 	}
 
 	// 下面是形状
