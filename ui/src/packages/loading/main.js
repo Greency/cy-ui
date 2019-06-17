@@ -19,7 +19,7 @@ function ShowLoading(options) {
 }
 
 function HideLoading() {
-    if (!loading || loading._isDestroyed)
+    if (!loading || !loading.show)
         return;
 
     loading.show = false;

@@ -40,9 +40,13 @@ export default {
 		'cy-button': Button
 	},
 	props: {
-		value: Boolean,
+        value: Boolean,
 		columns: Array,
-		keyVal: String,
+        keyVal: String,
+        showMask: {
+            type: Boolean,
+            default: true
+        },
 		itemHeight: {
 			type: Number,
 			default: 40
@@ -65,7 +69,9 @@ export default {
 	},
 	watch: {
 		show(val) {
-			this.$emit('input', val);
+            this.$emit('input', val);
+            if (val && this.showMask)
+                this.$showMask();
 		},
 		value(val) {
 			this.show = val;
@@ -80,7 +86,7 @@ export default {
 		}
 	},
 	created() {
-		let { focusPosition, baseOffset, visibleCount, itemHeight, columns } = this,
+		let { focusPosition, baseOffset, visibleCount, itemHeight, columns, show, showMask } = this,
             result = [];
             
 		switch (focusPosition) {
@@ -92,13 +98,17 @@ export default {
 
 		columns.forEach((item) => {
 			result.push(0);
-		});
+        });
+
+        if (show && showMask)
+            this.$showMask();
 
 		this.baseOffset = baseOffset;
 		this.result = result;
 	},
 	methods: {
 		handleClose() {
+            this.$hideMask();
             this.show = false;
             this.$emit('input', false);
             this.$emit('close');
