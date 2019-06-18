@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Toast from '../packages/toast/main';
 import { ShowLoading, HideLoading } from '../packages/loading/main';
 import { ShowMask, HideMask } from '../packages/mask/main';
+import { ShowAlert, ShowConfirm } from '../packages/dialog/main';
 
 export default function () {
     Vue.prototype.$showToast = Toast;
@@ -9,4 +10,8 @@ export default function () {
     Vue.prototype.$hideLoading = HideLoading;
     Vue.prototype.$showMask = ShowMask;
     Vue.prototype.$hideMask = HideMask;
+    Vue.prototype.$dialog = {
+        alert: ShowAlert,
+        confirm: ShowConfirm
+    };
 }

@@ -1,6 +1,7 @@
 <template>
 	<div class="wrapper">
-		<cy-button  type="warning" shape="" size="large" @click="setting">弹一弹</cy-button>
+		<cy-button type="warning" shape size="large" @click="setting">弹一弹</cy-button>
+		<cy-button type="danger" shape size="large" @click="setting2">弹一弹</cy-button>
 		<!--<cy-popup v-model="show">
 			<div style="width: 375px;height: 300px;background-color: red;"></div>
 		</cy-popup>
@@ -29,10 +30,36 @@ export default {
 		}
 	},
 	methods: {
-		setting: function(e){
-			this.show = !this.show;
+		setting: function (e) {
+			this.$dialog.alert({
+				content: '这是alert框，只有一个按钮哦！',
+				beforeClose: (next) => {
+					console.log('beforeClose');
+					setTimeout(() => {
+						next();
+					}, 3000);
+				},
+				submit: () => {
+					console.log('submit');
+				}
+			});
+			//this.show = !this.show;
 		},
-		submitChoose: function(data){
+		setting2: function(){
+			this.$dialog.confirm({
+				content: '这是确认框，有两个按钮哦！',
+				beforeClose: (next) => {
+					console.log('beforeClose');
+					setTimeout(() => {
+						next();
+					}, 3000);
+				},
+				submit: () => {
+					console.log('submit');
+				}
+			});
+		},
+		submitChoose: function (data) {
 			console.log('picker result: ', data);
 		}
 	}
@@ -41,7 +68,8 @@ export default {
 
 <style>
 body {
-	font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
+	font-family: "PingFang SC", Helvetica, "STHeiti STXihei", "Microsoft YaHei",
+		Tohoma, Arial, sans-serif;
 }
 .wrapper::before {
 	content: "\F0C1";
