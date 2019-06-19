@@ -47,9 +47,9 @@ export default {
 			if (beforeClose) {
 				console.log('handling', this.handling);
 				beforeClose(this.handleSubmitAndClose);
-				return;
+			} else {
+				this.handleSubmitAndClose();
 			}
-			this.handleSubmitAndClose();
 		},
 		handleCancel() {
 			this.cancel && this.cancel();
