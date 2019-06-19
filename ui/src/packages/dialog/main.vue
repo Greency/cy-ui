@@ -45,7 +45,6 @@ export default {
 
 			this.handling = true;
 			if (beforeClose) {
-				console.log('handling', this.handling);
 				beforeClose(this.handleSubmitAndClose);
 			} else {
 				this.handleSubmitAndClose();
