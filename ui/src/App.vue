@@ -12,6 +12,18 @@
 			<cy-radio :value="4">测试4</cy-radio>
 			<cy-radio :value="5">测试5</cy-radio>
 		</cy-radio-group>
+
+		<cy-checkbox v-model="checkboxVal">多选框</cy-checkbox>
+
+		<cy-checkbox-group v-model="checkboxGroupVal">
+			<cy-checkbox :value="1">多选框1</cy-checkbox>
+			<cy-checkbox :disabled="true" :value="2">多选框2</cy-checkbox>
+			<cy-checkbox :value="3">多选框3</cy-checkbox>
+			<cy-checkbox :value="4">多选框4</cy-checkbox>
+			<cy-checkbox :value="5">多选框5</cy-checkbox>
+			<cy-checkbox :value="6">多选框6</cy-checkbox>
+		</cy-checkbox-group>
+
 		<!--<cy-popup v-model="show">
 			<div style="width: 375px;height: 300px;background-color: red;"></div>
 		</cy-popup>
@@ -28,6 +40,8 @@ import Picker from './packages/picker/picker';
 import Switch from './packages/switch';
 import Radio from './packages/radio/radio';
 import RadioGroup from './packages/radio/radioGroup';
+import Checkbox from './packages/checkbox/checkbox';
+import CheckboxGroup from './packages/checkbox/checkboxGroup';
 
 export default {
 	name: 'app',
@@ -37,7 +51,9 @@ export default {
 		'cy-picker': Picker,
 		'cy-switch': Switch,
 		'cy-radio': Radio,
-		'cy-radio-group': RadioGroup
+		'cy-radio-group': RadioGroup,
+		'cy-checkbox': Checkbox,
+		'cy-checkbox-group': CheckboxGroup
 	},
 	data() {
 		return {
@@ -45,6 +61,8 @@ export default {
 			switchVal: true,
 			radioVal: false,
 			radioGroupVal: 1,
+			checkboxVal: false,
+			checkboxGroupVal: [2],
 			columns: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], ['a', 'b', 'c']]
 		}
 	},
@@ -57,6 +75,12 @@ export default {
 		},
 		radioGroupVal(val){
 			console.log('radioGroupVal', val);
+		},
+		checkboxVal(val){
+			console.log('checkboxVal', val);
+		},
+		checkboxGroupVal(val){
+			console.log('checkboxGroupVal', val);
 		}
 	},
 	methods: {
