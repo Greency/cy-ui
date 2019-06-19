@@ -3,6 +3,15 @@
 		<cy-button type="warning" shape size="large" @click="setting">弹一弹</cy-button>
 		<cy-button type="danger" shape size="large" @click="setting2">弹一弹</cy-button>
 		<cy-switch v-model="switchVal"></cy-switch>
+		<cy-radio v-model="radioVal">测试</cy-radio>
+
+		<cy-radio-group v-model="radioGroupVal">
+			<cy-radio :disabled="true" :value="1">测试1</cy-radio>
+			<cy-radio :disabled="true" :value="2">测试2</cy-radio>
+			<cy-radio :value="3">测试3</cy-radio>
+			<cy-radio :value="4">测试4</cy-radio>
+			<cy-radio :value="5">测试5</cy-radio>
+		</cy-radio-group>
 		<!--<cy-popup v-model="show">
 			<div style="width: 375px;height: 300px;background-color: red;"></div>
 		</cy-popup>
@@ -17,6 +26,8 @@ import Popup from './packages/popup';
 import Button from './packages/button';
 import Picker from './packages/picker/picker';
 import Switch from './packages/switch';
+import Radio from './packages/radio/radio';
+import RadioGroup from './packages/radio/radioGroup';
 
 export default {
 	name: 'app',
@@ -24,18 +35,28 @@ export default {
 		'cy-popup': Popup,
 		'cy-button': Button,
 		'cy-picker': Picker,
-		'cy-switch': Switch
+		'cy-switch': Switch,
+		'cy-radio': Radio,
+		'cy-radio-group': RadioGroup
 	},
 	data() {
 		return {
 			show: false,
 			switchVal: true,
+			radioVal: false,
+			radioGroupVal: 1,
 			columns: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], ['a', 'b', 'c']]
 		}
 	},
 	watch: {
 		switchVal(val){
 			console.log(val);
+		},
+		radioVal(val){
+			console.log('radio: ', val);
+		},
+		radioGroupVal(val){
+			console.log('radioGroupVal', val);
 		}
 	},
 	methods: {

@@ -47,8 +47,8 @@ export default {
 	height: 1em;
 	border: 1px solid #ebedf0;
 	border-radius: 1em;
-	background-color: rgba(9, 187, 7, 0);
-	transition: background-color 250ms ease-in;
+	background-color: white;
+	transition: background-color 300ms ease-in;
 
 	&-round {
 		position: absolute;
@@ -66,7 +66,7 @@ export default {
 	}
 
 	&--on {
-		background-color: rgba(9, 187, 7, 1);
+		background-color: #09bb07;
 	}
 }
 </style>
