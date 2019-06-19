@@ -17,6 +17,7 @@ export default {
 	name: 'Dialog',
 	data() {
 		return {
+			handling: false,
 			type: 'Confirm',
 			options: {
 				title: '提示',
@@ -38,7 +39,13 @@ export default {
 	methods: {
 		handleSubmit() {
 			let { beforeClose } = this.options;
+
+			if (this.handling)
+				return;
+
+			this.handling = true;
 			if (beforeClose) {
+				console.log('handling', this.handling);
 				beforeClose(this.handleSubmitAndClose);
 				return;
 			}
@@ -50,6 +57,7 @@ export default {
 		},
 		closeAll() {
 			this.$hideMask();
+			this.$destroy();
 			document.body.removeChild(this.$el);
 		},
 		handleSubmitAndClose() {
