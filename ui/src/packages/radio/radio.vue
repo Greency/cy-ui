@@ -82,6 +82,7 @@ export default {
 				border-color: #ebedf0;
 
 				&::after {
+					position: absolute;
 					content: '\e665';
 					text-align: center;
 					vertical-align: middle;
@@ -108,6 +109,7 @@ export default {
 			border-color: #09bb07;
 
 			&::after {
+				position: absolute;
 				content: '\e665';
 				text-align: center;
 				vertical-align: middle;
