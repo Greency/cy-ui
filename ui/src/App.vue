@@ -2,6 +2,7 @@
 	<div class="wrapper">
 		<cy-button type="warning" shape size="large" @click="setting">弹一弹</cy-button>
 		<cy-button type="danger" shape size="large" @click="setting2">弹一弹</cy-button>
+		<cy-button type="primary" shape size="large" @click="setting3">弹一弹</cy-button>
 		<cy-switch v-model="switchVal"></cy-switch>
 		<cy-radio v-model="radioVal">测试</cy-radio>
 
@@ -24,6 +25,8 @@
 			<cy-checkbox :value="6">多选框6</cy-checkbox>
 		</cy-checkbox-group>
 
+		<cy-modal v-model="showModal" type="Alert" submitPosition="Left" content="这是手动引入modal组件的方式"></cy-modal>
+
 		<!--<cy-popup v-model="show">
 			<div style="width: 375px;height: 300px;background-color: red;"></div>
 		</cy-popup>
@@ -42,6 +45,7 @@ import Radio from './packages/radio/radio';
 import RadioGroup from './packages/radio/radioGroup';
 import Checkbox from './packages/checkbox/checkbox';
 import CheckboxGroup from './packages/checkbox/checkboxGroup';
+import Modal from './packages/modal';
 
 export default {
 	name: 'app',
@@ -53,10 +57,12 @@ export default {
 		'cy-radio': Radio,
 		'cy-radio-group': RadioGroup,
 		'cy-checkbox': Checkbox,
-		'cy-checkbox-group': CheckboxGroup
+		'cy-checkbox-group': CheckboxGroup,
+		'cy-modal': Modal
 	},
 	data() {
 		return {
+			showModal: false,
 			show: false,
 			switchVal: true,
 			radioVal: false,
@@ -112,6 +118,9 @@ export default {
 					console.log('submit');
 				}
 			});
+		},
+		setting3: function(){
+			this.showModal = true;
 		},
 		submitChoose: function (data) {
 			console.log('picker result: ', data);

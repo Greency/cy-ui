@@ -18,7 +18,7 @@ export default {
 	name: 'Radio',
 	mixins: [Bem, FindParent],
 	props: {
-		value: Boolean | String | Number,
+		value: [Boolean, String, Number],
 		disabled: Boolean
 	},
 	computed: {

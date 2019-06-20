@@ -4,9 +4,15 @@
 		<div class="cy-dialog-content" v-html="options.content"></div>
 		<div class="cy-button-group" v-if="type === 'Confirm'">
 			<cy-button shape="square" @click="handleCancel">{{options.cancelText}}</cy-button>
-			<cy-button shape="square" @click="handleSubmit">{{options.submitText}}</cy-button>
+			<cy-button class="cy-button-submit" shape="square" @click="handleSubmit">{{options.submitText}}</cy-button>
 		</div>
-		<cy-button v-else shape="square" size="large" @click="handleSubmit">{{options.submitText}}</cy-button>
+		<cy-button
+			class="cy-button-submit"
+			v-else
+			shape="square"
+			size="large"
+			@click="handleSubmit"
+		>{{options.submitText}}</cy-button>
 	</div>
 </template>
 
@@ -100,6 +106,10 @@ export default {
 				border-right: 1px solid #ebedf0;
 			}
 		}
+	}
+
+	.cy-button-submit {
+		color: #09bb07;
 	}
 
 	button {

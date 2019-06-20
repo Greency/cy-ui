@@ -8,7 +8,7 @@
 export default {
     name: 'RadioGroup',
     props: {
-        value: String | Number | Boolean
+        value: [Boolean, String, Number]
     }
 }
 </script>
