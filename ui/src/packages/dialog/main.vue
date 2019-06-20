@@ -70,9 +70,9 @@ export default {
 <style lang="stylus">
 .cy-dialog {
 	position: fixed;
-	width: 75%;
 	top: 50%;
 	left: 50%;
+	width: 75%;
 	padding-top: 10px;
 	transform: translate(-50%, -50%);
 	background-color: white;
