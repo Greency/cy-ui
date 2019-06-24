@@ -1,5 +1,5 @@
 <template>
-	<div class="cy-mask" v-if="show"></div>
+	<div class="cy-mask" v-if="show" @onmouseover.stop></div>
 </template>
 
 <script>
