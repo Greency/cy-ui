@@ -72,6 +72,7 @@ export default {
 	border: 1px solid transparent; // 自定义边框
 	border-radius: 2px;
 	outline: none; // 消除默认点击蓝色边框效果
+	overflow: hidden;
 
 	.small-loading-icon {
 		margin-right: 5px;
