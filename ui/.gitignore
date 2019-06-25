@@ -2,7 +2,7 @@
 node_modules
 public
 src/assets
-/dist
+#/dist
 
 # local env files
 .env.local
