@@ -66,7 +66,6 @@ export default {
 .cy-button {
 	display: inline-block;
 	position: relative;
-	margin: 0;
 	padding: 0;
 	font-size: 16px;
 	border: 1px solid transparent; // 自定义边框
