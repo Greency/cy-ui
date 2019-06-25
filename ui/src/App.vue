@@ -33,12 +33,12 @@
 		<cy-toast mode="fail" content="提交失败提交失败提交失败提交失败"></cy-toast>-->
 
 		<cy-picker v-model="show" focusPosition="middle" :columns="columns" @submit="submitChoose"></cy-picker>
-		<cy-swipe-cell>
-			<div class="content" slot="content">content</div>
-			<div class="delete" slot="right">
-				删除
-			</div>
-		</cy-swipe-cell>
+		<cy-swipe-cell-group>
+			<cy-swipe-cell :index="index" v-for="(item, index) in swipeCells" :key="index">
+				<div class="content" slot="content">content{{index}}</div>
+				<div class="delete" slot="right">删除</div>
+			</cy-swipe-cell>
+		</cy-swipe-cell-group>
 		<div class="placeholder"></div>
 	</div>
 </template>
@@ -54,6 +54,7 @@ import Checkbox from './packages/checkbox/checkbox';
 import CheckboxGroup from './packages/checkbox/checkboxGroup';
 import Modal from './packages/modal';
 import SwipeCell from './packages/swipeCell/swipeCell';
+import SwipeCellGroup from './packages/swipeCell/swipeCellGroup';
 
 export default {
 	name: 'app',
@@ -67,7 +68,8 @@ export default {
 		'cy-checkbox': Checkbox,
 		'cy-checkbox-group': CheckboxGroup,
 		'cy-modal': Modal,
-		'cy-swipe-cell': SwipeCell
+		'cy-swipe-cell': SwipeCell,
+		'cy-swipe-cell-group': SwipeCellGroup
 	},
 	data() {
 		return {
@@ -78,23 +80,24 @@ export default {
 			radioGroupVal: 1,
 			checkboxVal: false,
 			checkboxGroupVal: [2],
-			columns: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], ['a', 'b', 'c']]
+			columns: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], ['a', 'b', 'c']],
+			swipeCells: ['', '', '', '']
 		}
 	},
 	watch: {
-		switchVal(val){
+		switchVal(val) {
 			console.log(val);
 		},
-		radioVal(val){
+		radioVal(val) {
 			console.log('radio: ', val);
 		},
-		radioGroupVal(val){
+		radioGroupVal(val) {
 			console.log('radioGroupVal', val);
 		},
-		checkboxVal(val){
+		checkboxVal(val) {
 			console.log('checkboxVal', val);
 		},
-		checkboxGroupVal(val){
+		checkboxGroupVal(val) {
 			console.log('checkboxGroupVal', val);
 		}
 	},
@@ -114,7 +117,7 @@ export default {
 			});
 			//this.show = !this.show;
 		},
-		setting2: function(){
+		setting2: function () {
 			this.$dialog.confirm({
 				content: '这是确认框，有两个按钮哦！',
 				beforeClose: (next) => {
@@ -128,7 +131,7 @@ export default {
 				}
 			});
 		},
-		setting3: function(){
+		setting3: function () {
 			this.showModal = true;
 		},
 		submitChoose: function (data) {

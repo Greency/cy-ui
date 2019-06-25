@@ -16,16 +16,37 @@
 </template>
 
 <script>
+import FindParent from '../mixins/findParent';
+
 export default {
 	name: 'SwipeCell',
+	mixins: [FindParent],
+	props: {
+		index: Number
+	},
 	data() {
 		return {
 			expand: false,
-			close: true,
 			rightWidth: 100,
 			startX: 0,
-			offsetX: 0,
+			offsetX: 0
 		}
+	},
+	computed: {
+		active() {
+			return (this.parent || this).index === this.index;
+		}
+	},
+	watch: {
+		active(val) {
+			if (!val) {
+				this.expand = false;
+				this.offsetX = 0;
+			}
+		}
+	},
+	created() {
+		this.findParent('SwipeCellGroup');
 	},
 	methods: {
 		handleTouchStart(e) {
@@ -52,6 +73,8 @@ export default {
 				this.expand = true;
 				this.offsetX = -rightWidth;
 				this.startX = this.offsetX;
+				if (this.parent)
+					this.parent.index = this.index;
 			}
 		}
 	}
