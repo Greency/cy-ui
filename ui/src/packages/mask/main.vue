@@ -1,5 +1,5 @@
 <template>
-	<div class="cy-mask" v-if="show" @click="test2" @mousemove="test"></div>
+	<div class="cy-mask" v-if="show" @touchmove.prevent></div>
 </template>
 
 <script>
@@ -8,16 +8,6 @@ export default {
 	data(){
 		return {
 			show: true
-		}
-	},
-	methods: {
-		test(e){
-			e.preventDefault();
-			e.stopPropagation();
-			console.log('mouseover mask');
-		},
-		test2(){
-			console.log('click: mask');
 		}
 	}
 }
