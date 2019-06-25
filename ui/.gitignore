@@ -3,6 +3,8 @@ node_modules
 public
 src/assets
 vue.config.js
+pages/
+router/
 #/dist
 
 # local env files
