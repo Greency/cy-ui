@@ -33,6 +33,13 @@
 		<cy-toast mode="fail" content="提交失败提交失败提交失败提交失败"></cy-toast>-->
 
 		<cy-picker v-model="show" focusPosition="middle" :columns="columns" @submit="submitChoose"></cy-picker>
+		<cy-swipe-cell>
+			<div class="content" slot="content">content</div>
+			<div class="delete" slot="right">
+				删除
+			</div>
+		</cy-swipe-cell>
+		<div class="placeholder"></div>
 	</div>
 </template>
 
@@ -46,6 +53,7 @@ import RadioGroup from './packages/radio/radioGroup';
 import Checkbox from './packages/checkbox/checkbox';
 import CheckboxGroup from './packages/checkbox/checkboxGroup';
 import Modal from './packages/modal';
+import SwipeCell from './packages/swipeCell/swipeCell';
 
 export default {
 	name: 'app',
@@ -58,7 +66,8 @@ export default {
 		'cy-radio-group': RadioGroup,
 		'cy-checkbox': Checkbox,
 		'cy-checkbox-group': CheckboxGroup,
-		'cy-modal': Modal
+		'cy-modal': Modal,
+		'cy-swipe-cell': SwipeCell
 	},
 	data() {
 		return {
@@ -134,7 +143,18 @@ body {
 	font-family: "PingFang SC", Helvetica, "STHeiti STXihei", "Microsoft YaHei",
 		Tohoma, Arial, sans-serif;
 }
-.wrapper::before {
-	content: "\F0C1";
+
+.placeholder {
+	height: 800px;
+}
+
+.content {
+	height: 100px;
+	background-color: red;
+}
+
+.delete {
+	height: 100%;
+	background-color: blue;
 }
 </style>
