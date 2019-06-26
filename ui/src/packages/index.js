@@ -1,4 +1,3 @@
-import setPrototype from './setPrototype';
 import Toast from './toast/index';
 import Loading from './loading/index';
 import Dialog from './dialog/index';
