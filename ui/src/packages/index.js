@@ -19,30 +19,31 @@ import Checkbox from './checkbox/checkbox';
 
 
 const COMPONENTS_LIST = [
-    { name: 'toast', component: Toast },
-    { name: 'loading', component: Loading },
-    { name: 'dialog', component: Dialog },
-    { name: 'mask', component: Mask },
+    { name: 'toast', component: Toast, needInstall: false },
+    { name: 'loading', component: Loading, needInstall: false },
+    { name: 'dialog', component: Dialog, needInstall: false },
+    { name: 'mask', component: Mask, needInstall: false },
 
-    { name: 'button', component: Button },
-    { name: 'popup', component: Popup },
-    { name: 'switch', component: Switch },
-    { name: 'modal', component: Modal },
-    { name: 'swipe-cell-group', component: SwipeCellGroup },
-    { name: 'swipe-cell', component: SwipeCell },
-    { name: 'picker', component: Picker },
-    { name: 'picker-column', component: PickerColumn },
-    { name: 'radio-group', component: RadioGroup },
-    { name: 'radio', component: Radio },
-    { name: 'checkbox-group', component: CheckboxGroup },
-    { name: 'checkbox', component: Checkbox }
+    { name: 'button', component: Button, needInstall: true },
+    { name: 'popup', component: Popup, needInstall: true },
+    { name: 'switch', component: Switch, needInstall: true },
+    { name: 'modal', component: Modal, needInstall: true },
+    { name: 'swipe-cell-group', component: SwipeCellGroup, needInstall: true },
+    { name: 'swipe-cell', component: SwipeCell, needInstall: true },
+    { name: 'picker', component: Picker, needInstall: true },
+    { name: 'picker-column', component: PickerColumn, needInstall: true },
+    { name: 'radio-group', component: RadioGroup, needInstall: true },
+    { name: 'radio', component: Radio, needInstall: true },
+    { name: 'checkbox-group', component: CheckboxGroup, needInstall: true },
+    { name: 'checkbox', component: Checkbox, needInstall: true }
 ];
 
 /*add the "install" method to each component.*/
-COMPONENTS_LIST.forEach((item)=>{
-    item.component.install = function(Vue){
-        Vue.component(`cy-${item.name}`, item.component);
-    }
+COMPONENTS_LIST.forEach((item) => {
+    if (item.needInstall)
+        item.component.install = function (Vue) {
+            Vue.component(`cy-${item.name}`, item.component);
+        }
 });
 
 
