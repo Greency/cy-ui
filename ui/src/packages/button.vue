@@ -73,6 +73,7 @@ export default {
 	border-radius: 2px;
 	outline: none; // 消除默认点击蓝色边框效果
 	overflow: hidden;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 	.small-loading-icon {
 		margin-right: 5px;
