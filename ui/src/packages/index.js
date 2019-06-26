@@ -1,4 +1,9 @@
 import setPrototype from './setPrototype';
+import Toast from './toast/index';
+import Loading from './loading/index';
+import Dialog from './dialog/index';
+import Mask from './mask/index';
+
 import Button from './button';
 import Popup from './popup';
 import Switch from './switch';
@@ -12,7 +17,14 @@ import Radio from './radio/radio';
 import CheckboxGroup from './checkbox/checkboxGroup';
 import Checkbox from './checkbox/checkbox';
 
+
+
 const COMPONENTS_LIST = [
+    { name: 'toast', component: Toast },
+    { name: 'loading', component: Loading },
+    { name: 'dialog', component: Dialog },
+    { name: 'mask', component: Mask },
+
     { name: 'button', component: Button },
     { name: 'popup', component: Popup },
     { name: 'switch', component: Switch },
@@ -27,15 +39,42 @@ const COMPONENTS_LIST = [
     { name: 'checkbox', component: Checkbox }
 ];
 
-function install(Vue) {
-    setPrototype(Vue);
-
-    COMPONENTS_LIST.forEach((item) => {
+/*add the "install" method to each component.*/
+COMPONENTS_LIST.forEach((item)=>{
+    item.component.install = function(Vue){
         Vue.component(`cy-${item.name}`, item.component);
+    }
+});
+
+
+function install(Vue) {
+    COMPONENTS_LIST.forEach((item) => {
+        Vue.use(item.component);
     });
 }
 
 let CyUI = {
     install
 }
+
+export {
+    Toast,
+    Loading,
+    Dialog,
+    Mask,
+
+    Button,
+    Popup,
+    Switch,
+    Modal,
+    SwipeCellGroup,
+    SwipeCell,
+    Picker,
+    PickerColumn,
+    RadioGroup,
+    Radio,
+    CheckboxGroup,
+    Checkbox
+};
+
 export default CyUI;

@@ -1,10 +1,11 @@
 {
   "name": "@codercy1995/cy-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "files": [
     "dist/cy-ui.common.js",
     "dist/cy-ui.css"
   ],
+  "main": "dist/cy-ui.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
