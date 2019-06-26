@@ -1,4 +1,4 @@
-import './bindPrototype';
+import setPrototype from './setPrototype';
 import Button from './button';
 import Popup from './popup';
 import Switch from './switch';
@@ -28,7 +28,9 @@ const COMPONENTS_LIST = [
 ];
 
 function install(Vue) {
-    COMPONENTS_LIST.forEach((item)=>{
+    setPrototype(Vue);
+
+    COMPONENTS_LIST.forEach((item) => {
         Vue.component(`cy-${item.name}`, item.component);
     });
 }
