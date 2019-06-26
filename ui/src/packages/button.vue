@@ -64,6 +64,7 @@ export default {
 
 <style lang="stylus">
 .cy-button {
+	box-sizing: border-box;
 	display: inline-block;
 	position: relative;
 	padding: 0;
@@ -86,7 +87,6 @@ export default {
 		width: 100%;
 		height: 100%;
 		background-color: black;
-		border: 1px solid black;
 		opacity: 0;
 	}
 
