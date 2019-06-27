@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="card">
 			<h3>默认类型</h3>
-			<cy-button class="button" @click="test">默认按钮</cy-button>
+			<cy-button class="button">默认按钮</cy-button>
 			<cy-button class="button" type="primary">确认按钮</cy-button>
 			<cy-button class="button" type="info">信息按钮</cy-button>
 			<cy-button class="button" type="warning">警告按钮</cy-button>
@@ -29,14 +29,6 @@
 <script>
 export default {
 	name: '',
-	methods: {
-		test(){
-			this.$showToast({
-				mode: 'success',
-				content: 'fsdfsdf'
-			});
-		}
-	}
 }
 </script>
 

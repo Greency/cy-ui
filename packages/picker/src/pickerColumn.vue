@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import Bem from '../mixins/bem';
+import Bem from '../../mixins/bem';
 
 
 function range(num, min, max) {

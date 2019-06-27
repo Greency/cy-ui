@@ -1,4 +1,3 @@
-<template>
 	<button
 		:class="['cy-button', bem('button', type), bem('button', size), bem('button', shape), disabled ? bem('button', 'disabled') : '']"
 		:disabled="disabled"
@@ -36,7 +35,7 @@
 </template>
 
 <script>
-import Bem from './mixins/bem';
+import Bem from '../../mixins/bem';
 
 export default {
 	name: 'Button',

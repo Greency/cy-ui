@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import Button from './button';
+import Button from '../../button';
 
 export default {
 	name: 'Modal',

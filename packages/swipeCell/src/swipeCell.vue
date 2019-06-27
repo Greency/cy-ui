@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import FindParent from '../mixins/findParent';
+import FindParent from '../../mixins/findParent';
 
 export default {
 	name: 'SwipeCell',

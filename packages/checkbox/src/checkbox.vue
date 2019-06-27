@@ -1,21 +1,21 @@
 <template>
-	<div :class="['cy-radio', disabled ? bem('radio', 'disabled') : '']">
+	<div :class="['cy-checkbox', disabled ? bem('checkbox', 'disabled') : '']">
 		<span
-			:class="['cy-radio-icon', checked ? bem('radio-icon', 'checked') : '']"
+			:class="['cy-checkbox-icon', checked ? bem('checkbox-icon', 'checked') : '']"
 			@click="handleToggle"
 		></span>
-		<span class="cy-radio-text">
+		<span class="cy-checkbox-text">
 			<slot></slot>
 		</span>
 	</div>
 </template>
 
 <script>
-import Bem from '../mixins/bem';
-import FindParent from '../mixins/findParent';
+import Bem from '../../mixins/bem';
+import FindParent from '../../mixins/findParent';
 
 export default {
-	name: 'Radio',
+	name: 'Checkbox',
 	mixins: [Bem, FindParent],
 	props: {
 		value: [Boolean, String, Number],
@@ -24,11 +24,25 @@ export default {
 	computed: {
 		currentVal: {
 			set(val) {
-				if (this.parent) {
-					this.parent.$emit('input', val);
+				let { parent } = this;
+				if (parent) {
+					let value = parent.value,
+						add = true;
+
+					for (let i = 0, len = value.length; i < len; i++) {
+						if (value[i] === val) {
+							value.splice(i, 1);
+							add = false;
+							break;
+						}
+					}
+
+					if (add)
+						value.push(val);
+
+					this.parent.$emit('input', value);
 				} else {
-					if (!this.value)
-						this.$emit('input', val);
+					this.$emit('input', val);
 				}
 			},
 			get() {
@@ -37,14 +51,14 @@ export default {
 		},
 		checked() {
 			if (this.parent) {
-				return this.currentVal === this.value;
+				return this.currentVal.includes(this.value);
 			} else {
 				return this.value;
 			}
 		}
 	},
 	created() {
-		this.findParent('RadioGroup');
+		this.findParent('CheckboxGroup');
 	},
 	methods: {
 		handleToggle() {
@@ -54,8 +68,7 @@ export default {
 			if (this.parent) {
 				this.currentVal = this.value;
 			} else {
-				if (!this.currentVal)
-					this.currentVal = true;
+				this.currentVal = !this.value;
 			}
 		}
 	}
@@ -63,9 +76,9 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../style/index.styl';
+@import '../../style/index.styl';
 
-.cy-radio {
+.cy-checkbox {
 	display: inline-flex;
 	align-items: center;
 	height: 24px;
@@ -73,7 +86,7 @@ export default {
 	&--disabled {
 		color: #c8c9cc;
 
-		.cy-radio-icon {
+		.cy-checkbox-icon {
 			background-color: #ebedf0;
 			border-color: #ebedf0;
 

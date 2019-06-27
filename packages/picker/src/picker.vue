@@ -28,9 +28,9 @@
 </template>
 
 <script>
-import Popup from '../popup';
+import Popup from '../../popup';
 import PickerColumn from './pickerColumn';
-import Button from '../button';
+import Button from '../../button';
 
 export default {
 	name: 'Picker',
