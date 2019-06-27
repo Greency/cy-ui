@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<router-view></router-view>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+	name: 'app',
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="stylus">
+@font-face {
+	font-family: 'iconfont';
+	src: url('//at.alicdn.com/t/font_1250118_iml9f6kittd.eot');
+	src: url('//at.alicdn.com/t/font_1250118_iml9f6kittd.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1250118_iml9f6kittd.woff2') format('woff2'), url('//at.alicdn.com/t/font_1250118_iml9f6kittd.woff') format('woff'), url('//at.alicdn.com/t/font_1250118_iml9f6kittd.ttf') format('truetype'), url('//at.alicdn.com/t/font_1250118_iml9f6kittd.svg#iconfont') format('svg');
+}
+
+body {
+	font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
+	margin: 15px;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 </style>
