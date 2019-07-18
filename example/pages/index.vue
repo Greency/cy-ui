@@ -6,7 +6,7 @@
 
 <script>
 export default {
-	name: 'app',
+	name: 'Index',
 	data() {
 		return {
 			componentsData: [
@@ -14,6 +14,9 @@ export default {
 				{ name: 'Toast', path: 'toast' },
 			]
 		}
+	},
+	created(){
+		console.log('created');
 	},
 	methods: {
 		navTo(path){

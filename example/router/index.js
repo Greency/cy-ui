@@ -8,8 +8,6 @@ import Button from '../pages/button/index';
 import Toast from '../pages/toast/index';
 
 export default new Router({
-    mode: 'history',
-    base: '/cy-ui/ui/dist/',
     routes: [
         {
             name: 'index',

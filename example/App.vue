@@ -1,10 +1,14 @@
 <template>
 	<router-view></router-view>
+	<!--<router-link :to="{ name: 'index'}">User</router-link>-->
 </template>
 
 <script>
 export default {
 	name: 'app',
+	created(){
+		console.log('APP created!');
+	}
 }
 </script>
 

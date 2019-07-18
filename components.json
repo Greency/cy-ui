@@ -1,0 +1,14 @@
+{
+    "button": "./packages/button/index.js",
+    "checkbox": "./packages/checkbox/index.js",
+    "dialog": "./packages/dialog/index.js",
+    "loading": "./packages/loading/index.js",
+    "mask": "./packages/mask/index.js",
+    "modal": "./packages/modal/index.js",
+    "picker": "./packages/picker/index.js",
+    "popup": "./packages/popup/index.js",
+    "radio": "./packages/radio/index.js",
+    "swipeCell": "./packages/swipeCell/index.js",
+    "switch": "./packages/switch/index.js",
+    "toast": "./packages/toast/index.js"
+}

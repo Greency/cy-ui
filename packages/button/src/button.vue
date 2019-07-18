@@ -1,3 +1,4 @@
+<template>
 	<button
 		:class="['cy-button', bem('button', type), bem('button', size), bem('button', shape), disabled ? bem('button', 'disabled') : '']"
 		:disabled="disabled"
