@@ -9,9 +9,9 @@
     "picker": "./packages/picker/index.js",
     "popup": "./packages/popup/index.js",
     "radio": "./packages/radio/index.js",
-    "radioGroup": "./packages/radioGroup/index.js",
-    "swipeCell": "./packages/swipeCell/index.js",
-    "swipeCellgroup": "./packages/swipeCellGroup/index.js",
+    "radiogroup": "./packages/radioGroup/index.js",
+    "swipecell": "./packages/swipeCell/index.js",
+    "swipecellgroup": "./packages/swipeCellGroup/index.js",
     "switch": "./packages/switch/index.js",
     "toast": "./packages/toast/index.js"
 }
