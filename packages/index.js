@@ -10,7 +10,6 @@ import Modal from './modal';
 import SwipeCell from './swipeCell';
 import SwipeCellGroup from './swipeCellGroup';
 import Picker from './picker';
-import PickerColumn from './pickerColumn';
 import Radio from './radio';
 import RadioGroup from './radioGroup';
 import Checkbox from './checkbox';
@@ -28,7 +27,6 @@ const COMPONENTS_LIST = [
     SwipeCellGroup,
     SwipeCell,
     Picker,
-    PickerColumn,
     RadioGroup,
     Radio,
     CheckboxGroup,
@@ -58,7 +56,6 @@ export {
     SwipeCellGroup,
     SwipeCell,
     Picker,
-    PickerColumn,
     RadioGroup,
     Radio,
     CheckboxGroup,
