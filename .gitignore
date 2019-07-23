@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
-public
+public/css/main.css.map
+public/js/main.js.map
 /lib
 
 # local env files
