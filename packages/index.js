@@ -1,5 +1,3 @@
-import Vue from 'vue';
-
 import Toast from './toast/index';
 import Loading from './loading/index';
 import Dialog from './dialog/index';
@@ -9,10 +7,14 @@ import Button from './button';
 import Popup from './popup';
 import Switch from './switch';
 import Modal from './modal';
-import { SwipeCellGroup, SwipeCell} from './swipeCell';
-import { Picker, PickerColumn } from './picker';
-import { RadioGroup, Radio } from './radio';
-import { CheckboxGroup, Checkbox } from './checkbox';
+import SwipeCell from './swipeCell';
+import SwipeCellGroup from './swipeCellGroup';
+import Picker from './picker';
+import PickerColumn from './pickerColumn';
+import Radio from './radio';
+import RadioGroup from './radioGroup';
+import Checkbox from './checkbox';
+import CheckboxGroup from './checkboxGroup';
 
 const COMPONENTS_LIST = [
     Toast,
