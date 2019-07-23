@@ -14,3 +14,7 @@ export default {
     }
 }
 </script>
+
+<style lang="stylus">
+    //占位
+</style>
