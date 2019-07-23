@@ -1,7 +1,7 @@
 {
     "button": "./packages/button/index.js",
     "checkbox": "./packages/checkbox/index.js",
-    "checkboxgroup": "./packages/checkboxGroup/index.js",
+    "checkbox-group": "./packages/checkboxGroup/index.js",
     "dialog": "./packages/dialog/index.js",
     "loading": "./packages/loading/index.js",
     "mask": "./packages/mask/index.js",
@@ -9,9 +9,9 @@
     "picker": "./packages/picker/index.js",
     "popup": "./packages/popup/index.js",
     "radio": "./packages/radio/index.js",
-    "radiogroup": "./packages/radioGroup/index.js",
-    "swipecell": "./packages/swipeCell/index.js",
-    "swipecellgroup": "./packages/swipeCellGroup/index.js",
+    "radio-group": "./packages/radioGroup/index.js",
+    "swipe-cell": "./packages/swipeCell/index.js",
+    "swipe-cell-group": "./packages/swipeCellGroup/index.js",
     "switch": "./packages/switch/index.js",
     "toast": "./packages/toast/index.js"
 }
