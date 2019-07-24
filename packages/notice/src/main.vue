@@ -40,6 +40,7 @@ export default {
 	width: 100%;
 	padding: 10px 10px;
 	color: white;
+	border-radius: 0 0 2px 2px;
 	transition: all 200ms ease-out;
 	transform: translate3d(0, 0, 0);
 
