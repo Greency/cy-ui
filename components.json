@@ -13,5 +13,6 @@
     "swipe-cell": "./packages/swipeCell/index.js",
     "swipe-cell-group": "./packages/swipeCellGroup/index.js",
     "switch": "./packages/switch/index.js",
-    "toast": "./packages/toast/index.js"
+    "toast": "./packages/toast/index.js",
+    "notice": "./packages/notice/index.js"
 }
