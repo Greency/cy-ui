@@ -22,7 +22,6 @@ export default {
 		setTimeout(() => {
 			this.show = true;
 		});
-		console.log('dd');
 
 		setTimeout(() => {
 			this.show = false;
