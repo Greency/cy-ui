@@ -10,6 +10,7 @@ export default {
 	data() {
 		return {
 			componentsData: [
+				{ name: 'Test', path: 'test' },
 				{ name: 'Button', path: 'button' },
 				{ name: 'Toast', path: 'toast' },
 			]

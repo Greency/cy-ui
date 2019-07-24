@@ -1,6 +1,7 @@
 import Toast from './toast/index';
 import Loading from './loading/index';
 import Dialog from './dialog/index';
+import Notice from './notice/index';
 import Mask from './mask/index';
 
 import Button from './button';
@@ -19,6 +20,7 @@ const COMPONENTS_LIST = [
     Toast,
     Loading,
     Dialog,
+    Notice,
     Mask,
     Button,
     Popup,
@@ -48,6 +50,7 @@ export {
     Toast,
     Loading,
     Dialog,
+    Notice,
     Mask,
     Button,
     Popup,

@@ -3,10 +3,11 @@ import App from './App'
 import router from './router/index';
 //import CyUI from '../packages/index';
 
-import { Button, Toast } from '../packages/index';
+import { Button, Toast, Notice } from '../packages/index';
 
 Vue.use(Button);
 Vue.use(Toast);
+Vue.use(Notice);
 Vue.config.productionTip = false
 
 router.beforeEach((to, from, next)=>{

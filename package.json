@@ -1,6 +1,6 @@
 {
   "name": "@codercy1995/cy-ui",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "",
   "files": [
     "lib"
@@ -13,6 +13,9 @@
     "build": "example-cli build-entire-lib && example-cli build-each-lib"
   },
   "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
     "css-loader": "^3.0.0",
     "style-loader": "^0.23.1",
     "stylus": "^0.54.5",
